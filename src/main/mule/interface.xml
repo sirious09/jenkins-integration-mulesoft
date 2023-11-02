@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule
+	xmlns:apikit="http://www.mulesoft.org/schema/mule/mule-apikit"
+	xmlns:json-logger="http://www.mulesoft.org/schema/mule/json-logger"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/json-logger http://www.mulesoft.org/schema/mule/json-logger/current/mule-json-logger.xsd">
+	<flow name="mule-template-api-main"
+		doc:id="2a460f18-c800-4c72-b089-5e03ee9003b3">
+		<http:listener doc:name="Listener"
+			doc:id="f4ab3bb8-c1b4-4dcf-b27d-53df8158f82b"
+			config-ref="HTTP_Listener_config" path="${api.path}">
+			<http:response
+				statusCode="#[vars.httpStatus default 200]">
+				<http:headers><![CDATA[#[vars.outboundHeaders default {}]]]></http:headers>
+			</http:response>
+			<http:error-response
+				statusCode="#[vars.httpStatus default 500]">
+				<http:body><![CDATA[#[payload]]]></http:body>
+				<http:headers><![CDATA[#[vars.outboundHeaders default {}]]]></http:headers>
+			</http:error-response>
+		</http:listener>
+		<flow-ref doc:name="method-resource-by-parameter" doc:id="8cc0e133-662c-418a-9a5e-070f637e09b1" name="method-resource-by-parameter"/>
+	</flow>
+	<flow name="interfaceFlow" doc:id="792f68f4-ddce-4705-b814-7abbdd70df27" >
+		<http:listener doc:name="Listener" doc:id="1354c4bd-a7ff-4704-b2bd-095e46a63b0b" config-ref="HTTP_Listener_config" path="/error" >
+			<http:response statusCode="#[vars.httpStatus default 200]" >
+				<http:headers ><![CDATA[#[vars.outboundHeaders default {}]]]></http:headers>
+			</http:response>
+			<http:error-response statusCode="#[vars.httpStatus default 500]" >
+				<http:body ><![CDATA[#[payload]]]></http:body>
+				<http:headers ><![CDATA[#[vars.outboundHeaders default {}]]]></http:headers>
+			</http:error-response>
+		</http:listener>
+		<raise-error doc:name="Raise error" doc:id="2d798418-73ee-4e82-a89e-325a882ca564" type="APP:ERROR_EXAMPLE" description="Uma descrição qualquer."/>
+	</flow>
+</mule>

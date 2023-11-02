@@ -1,0 +1,6 @@
+#Common properties
+api:
+  host: "0.0.0.0"
+  port: "8082"
+  version: "v1"
+  path: "/*"

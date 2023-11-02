@@ -1,0 +1,4 @@
+# Encrypted properties that are sensitive (passwords,token,username...)
+projectName-keystore:
+  alias: "example"
+  keystore-password: "mulesoft"

@@ -1,0 +1,94 @@
+errors:
+  override:
+    response: "false" ## Override all responses in one single flow
+    mule: "false"
+    http: "false"
+    file: "false"
+    jms: "false"
+    wsc: "false"
+    apikit: "false"
+    db: "false"
+    smb: "false"
+    sftp: "false"
+    amqp: "false"
+    transient: "false"
+    default: "false"
+  response:
+    transient:
+      DEFAULT: '{"errorMessage": "Internal Server Error","httpStatus" : "500"}'
+    apikit:
+      BAD_REQUEST: '{"errorMessage": "Bad Request","httpStatus" : "400"}'
+      NOT_FOUND: '{"errorMessage": "Not Found","httpStatus" : "404"}'
+      METHOD_NOT_ALLOWED: '{"errorMessage": "Method Not Allowed","httpStatus" : "405"}'
+      NOT_ACCEPTABLE: '{"errorMessage": "Not Acceptable","httpStatus" : "406"}'
+      UNSUPPORTED_MEDIA_TYPE: '{"errorMessage": "Unsupported Media Type","httpStatus" : "415"}'
+      DEFAULT: '{"errorMessage": "Internal Server Error","httpStatus" : "500"}'
+    jms:
+      SECURITY: '{"errorMessage": "Forbidden","httpStatus" : "403"}'
+      DESTINATION_NOT_FOUND: '{"errorMessage": "Not Found","httpStatus" : "404"}'
+      RETRY_EXHAUSTED: '{"errorMessage": "Number of retries exhausted","httpStatus" : "429"}'
+      TIMEOUT: '{"errorMessage": "Gateway Timeout","httpStatus" : "504"}'
+      CONNECTIVITY: '{"errorMessage": "Gateway Timeout","httpStatus" : "504"}'
+      DEFAULT: '{"errorMessage": "Internal Server Error","httpStatus" : "500"}'
+    http:
+      BAD_REQUEST: '{"errorMessage": "Bad Request","httpStatus" : "400"}'
+      ROUTING: '{"errorMessage": "Bad Request","httpStatus" : "400"}'
+      UNAUTHORIZED: '{"errorMessage": "Unauthorized","httpStatus" : "401"}'
+      FORBIDDEN: '{"errorMessage": "Forbidden","httpStatus" : "403"}'
+      CLIENT_SECURITY: '{"errorMessage": "Forbidden","httpStatus" : "403"}'
+      SECURITY: '{"errorMessage": "Forbidden","httpStatus" : "403"}'
+      NOT_FOUND: '{"errorMessage": "Not Found","httpStatus" : "404"}'
+      METHOD_NOT_ALLOWED: '{"errorMessage": "Method Not Allowed","httpStatus" : "405"}'
+      NOT_ACCEPTABLE: '{"errorMessage": "Not Acceptable","httpStatus" : "406"}'
+      UNSUPPORTED_MEDIA_TYPE: '{"errorMessage": "Unsupported media type","httpStatus" : "415"}'
+      TOO_MANY_REQUESTS: '{"errorMessage": "Too many requests","httpStatus" : "429"}'
+      RETRY_EXHAUSTED: '{"errorMessage": "Number of retries exhausted","httpStatus" : "429"}'
+      BAD_GATEWAY: '{"errorMessage": "Bad Gateway","httpStatus" : "502"}'
+      SERVICE_UNAVAILABLE: '{"errorMessage": "Service unavailable","httpStatus" : "503"}'
+      CONNECTIVITY: '{"errorMessage": "Gateway Timeout","httpStatus" : "504"}'
+      TIMEOUT: '{"errorMessage": "Gateway Timeout","httpStatus" : "504"}'
+      DEFAULT: '{"errorMessage": "Internal Server Error","httpStatus" : "500"}'
+    db:
+      RETRY_EXHAUSTED: '{"errorMessage": "Too Many Requests","httpStatus" : "429"}'
+      CONNECTIVITY: '{"errorMessage": "Gateway Timeout","httpStatus" : "504"}'
+      DEFAULT: '{"errorMessage": "Internal Server Error","httpStatus" : "500"}'
+    wsc:
+      BAD_REQUEST: '{"errorMessage": "Bad Request","httpStatus" : "400"}'
+      BAD_RESPONSE: '{"errorMessage": "Not Acceptable","httpStatus" : "406"}'
+      RETRY_EXHAUSTED: '{"errorMessage": "Number of retries exhausted","httpStatus" : "429"}'
+      CONNECTIVITY: '{"errorMessage": "Gateway Timeout","httpStatus" : "504"}'
+      TIMEOUT: '{"errorMessage": "Gateway Timeout","httpStatus" : "504"}'
+      DEFAULT: '{"errorMessage": "Internal Server Error","httpStatus" : "500"}'
+    mule:
+      DEFAULT: '{"errorMessage": "Internal Server Error","httpStatus" : "500"}'
+    file:
+      ILLEGAL_CONTENT: '{"errorMessage": "Bad Request","httpStatus" : "400"}'
+      ILLEGAL_PATH: '{"errorMessage": "Forbidden","httpStatus" : "403"}'
+      FILE_ALREADY_EXISTS: '{"errorMessage": "Forbidden","httpStatus" : "403"}'
+      ACCESS_DENIED: '{"errorMessage": "Forbidden","httpStatus" : "403"}'
+      FILE_LOCK: '{"errorMessage": "Locked - Failure to lock the resource.","httpStatus" : "423"}'
+      RETRY_EXHAUSTED: '{"errorMessage": "Number of retries exhausted","httpStatus" : "429"}'
+      CONNECTIVITY: '{"errorMessage": "Gateway Timeout","httpStatus" : "504"}'
+      DEFAULT: '{"errorMessage": "Internal Server Error","httpStatus" : "500"}'
+    sftp:
+      RETRY_EXHAUSTED: '{"errorMessage": "Number of retries exhausted","httpStatus" : "504"}'
+      ILLEGAL_PATH: '{"errorMessage": "Forbidden","httpStatus" : "403"}'
+      CONNECTIVITY: '{"errorMessage": "Gateway Timeout","httpStatus" : "504"}'
+      FILE_ALREADY_EXISTS: '{"errorMessage": "Forbidden","httpStatus" : "403"}'
+      ACCESS_DENIED: '{"errorMessage": "Forbidden","httpStatus" : "403"}'
+      FILE_LOCK: '{"errorMessage": "Locked - Failure to lock the resource.","httpStatus" : "423"}'
+      DEFAULT: '{"errorMessage": "Internal Server Error","httpStatus" : "500"}'
+    amqp:
+      CONNECTIVITY: '{"errorMessage": "Gateway Timeout","httpStatus" : "504"}'
+      CREATION_NOT_ALLOWED: '{"errorMessage": "Forbidden","httpStatus" : "403"}'
+      QUEUE_NOT_FOUND: '{"errorMessage": "Not Found","httpStatus" : "404"}'
+      RETRY_EXHAUSTED: '{"errorMessage": "Number of retries exhausted","httpStatus" : "429"}'
+      TIMEOUT: '{"errorMessage": "Gateway Timeout","httpStatus" : "504"}'
+      ILLEGAL_BODY: '{"errorMessage": "Not Acceptable","httpStatus" : "406"}'
+      PUBLISHING: '{"errorMessage": "Forbidden","httpStatus" : "403"}'
+      DEFAULT: '{"errorMessage": "Internal Server Error","httpStatus" : "500"}'
+    ## Unconfigured namespaces fall here
+    default: 
+      ## Add error identifiers to customize response
+      DEFAULT: '{"errorMessage": "Internal Server Error","httpStatus" : "500"}'
+      
