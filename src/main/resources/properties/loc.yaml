@@ -1,13 +1,9 @@
 #keystore
-projectName-keystore:
-  path: "keystore-example.jks"
-
+mla-keystore:
+  path: "keystore.jks"
+  
 # API Listener
 api:
   id: "11111111"
 
-# External Endpoint
-external-system:
-  host: "localhost"
-  port: "8082"
-  path: "/api/*"
+
