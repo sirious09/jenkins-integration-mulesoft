@@ -10,7 +10,7 @@
 	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.mulesoft.org/schema/mule/json-logger http://www.mulesoft.org/schema/mule/json-logger/current/mule-json-logger.xsd">
-	<flow name="mule-template-api-main"
+	<flow name="jenkins-integration-main"
 		doc:id="2a460f18-c800-4c72-b089-5e03ee9003b3">
 		<http:listener doc:name="Listener"
 			doc:id="f4ab3bb8-c1b4-4dcf-b27d-53df8158f82b"
