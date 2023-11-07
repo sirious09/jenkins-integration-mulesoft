@@ -39,13 +39,13 @@ http://www.mulesoft.org/schema/mule/tls http://www.mulesoft.org/schema/mule/tls/
 	<api-gateway:autodiscovery apiId="${api.id}"
 		ignoreBasePath="true" doc:name="API Autodiscovery"
 		doc:id="e33d8b22-59b6-4fc5-a0e4-08eac118b063"
-		flowRef="mule-template-api-main" />
+		flowRef="jenkins-integration-main" />
 	<configuration-properties doc:name="Configuration properties" doc:id="09f744cb-0336-481e-88ca-6a54643f55a2" file="properties\error-properties.yaml" />
-	<tls:context name="TLS_Context" doc:name="TLS Context" doc:id="078b3c07-4624-486d-8946-9484202773b3">
-		<tls:key-store type="jks"
-			path="${projectName-keystore.path}"
-			alias="${secure::projectName-keystore.alias}"
-			keyPassword="${secure::projectName-keystore.keystore-password}"
-			password="${secure::projectName-keystore.keystore-password}" />
+	<tls:context name="TLS_Context" doc:name="TLS Context"
+		doc:id="a77dea7b-26d1-4d2f-8444-45c86be0766e">
+		<tls:key-store type="jks" path="${keystore.path}"
+			alias="${secure::keystore.alias}"
+			keyPassword="${secure::keystore.keystore-password}"
+			password="${secure::keystore.keystore-password}" />
 	</tls:context>
 </mule>
