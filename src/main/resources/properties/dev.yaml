@@ -1,5 +1,5 @@
 #keystore
-mla-keystore:
+keystore:
   path: "keystore.jks"
   
 # API Listener

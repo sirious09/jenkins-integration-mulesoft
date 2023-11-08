@@ -1,5 +1,5 @@
 # Encrypted properties that are sensitive (passwords,token,username...)
-mla-keystore:
+keystore:
   alias: "![AAWPil6s9/aJjaTEBihtTA==]"
   keystore-password: "![uy0JUvIuAOAsvYQbZNZuxw==]"
   
