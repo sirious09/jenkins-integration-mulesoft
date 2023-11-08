@@ -4,7 +4,7 @@
 	
 	<groupId>4e0798ad-d10a-4e83-989b-e88b85f75b9f</groupId>
 	<artifactId>jenkins-integration-mulesoft-app</artifactId>
-	<version>1.0.3</version>
+	<version>1.0.4</version>
 	<packaging>mule-application</packaging>
 	
 	<name>jenkins-integration-mulesoft</name>
