@@ -47,7 +47,7 @@
 							</services>
 						</integrations>
 						<secureProperties>
-							<secret-key>m.zP6'u*od;n58|g</secret-key>
+							<secret-key>m!zP6@u*od%n58+g</secret-key>
 							<anypoint.platform.client_id>985108db05fd4dd3bb98e9525a764125</anypoint.platform.client_id>
 							<anypoint.platform.client_secret>5cF54FE0c9914f9b920c4A9c552E9c56</anypoint.platform.client_secret>
 						</secureProperties>
