@@ -4,7 +4,7 @@
 	
 	<groupId>4e0798ad-d10a-4e83-989b-e88b85f75b9f</groupId>
 	<artifactId>jenkins-integration-mulesoft-app</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.5</version>
 	<packaging>mule-application</packaging>
 	
 	<name>jenkins-integration-mulesoft</name>
@@ -38,6 +38,7 @@
 						<applicationName>jenkins-integration-mulesoft</applicationName>
 						<replicas>1</replicas>
 						<vCores>0.1</vCores>
+						<businessGroupId>4e0798ad-d10a-4e83-989b-e88b85f75b9f</businessGroupId>
 						<integrations>
 							<services>
 								<objectStoreV2>
@@ -46,7 +47,7 @@
 							</services>
 						</integrations>
 						<secureProperties>
-							<secret-key>secretpassword00</secret-key>
+							<secret-key>m!zP6@u*od%n58+g</secret-key>
 							<anypoint.platform.client_id>985108db05fd4dd3bb98e9525a764125</anypoint.platform.client_id>
 							<anypoint.platform.client_secret>5cF54FE0c9914f9b920c4A9c552E9c56</anypoint.platform.client_secret>
 						</secureProperties>

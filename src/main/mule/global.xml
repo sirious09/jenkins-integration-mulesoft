@@ -36,10 +36,6 @@ http://www.mulesoft.org/schema/mule/tls http://www.mulesoft.org/schema/mule/tls/
 	<import doc:name="Import"
 		doc:id="9dbb4310-534c-450c-8c28-f8d49942fc03" file="shared-global.xml"
 		doc:description="Global Error Handler&#10;" />
-	<api-gateway:autodiscovery apiId="${api.id}"
-		ignoreBasePath="true" doc:name="API Autodiscovery"
-		doc:id="e33d8b22-59b6-4fc5-a0e4-08eac118b063"
-		flowRef="jenkins-integration-main" />
 	<configuration-properties doc:name="Configuration properties" doc:id="09f744cb-0336-481e-88ca-6a54643f55a2" file="properties\error-properties.yaml" />
 	<tls:context name="TLS_Context" doc:name="TLS Context"
 		doc:id="a77dea7b-26d1-4d2f-8444-45c86be0766e">
